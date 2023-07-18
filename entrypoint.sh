@@ -1,31 +1,31 @@
 #!/bin/bash
 
 #LOCKFILE for generate uuid and keys in first start
-LOCKFILE=.lockfile
+LOCKFILE=config/.lockfile
 if [ ! -f $LOCKFILE ]
 then
 
 #generate uuid
 echo "Generate UUID..."
-/opt/xray/xray uuid >> /opt/xray/uuid
+/opt/xray/xray uuid >> config/uuid
 
 
 #generate Public & Private keys
 echo "Generate public & private keys..."
-/opt/xray/xray x25519 >> /opt/xray/keys
+/opt/xray/xray x25519 >> config/keys
 
 #Create files with Public & Private keys
-awk '/Public/{print $3}' keys >> public
-awk '/Private/{print $3}' keys >> private
+awk '/Public/{print $3}' config/keys >> config/public
+awk '/Private/{print $3}' config/keys >> config/private
 
-UUID=$(cat uuid)
-PRIVATE=$(cat private)
+UUID=$(cat config/uuid)
+PRIVATE=$(cat config/private)
 
 #set uuid in config.json
-sed -i 's/"id":.*/"id": "'${UUID}'",/' config.json
+sed -i 's/"id":.*/"id": "'${UUID}'",/' config/config.json
 
 #set private key in config.json
-sed -i 's/"privateKey":.*/"privateKey": "'${PRIVATE}'",/' config.json
+sed -i 's/"privateKey":.*/"privateKey": "'${PRIVATE}'",/' config/config.json
 
 touch $LOCKFILE
 fi
