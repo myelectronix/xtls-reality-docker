@@ -27,6 +27,11 @@ sed -i 's/"id":.*/"id": "'${UUID}'",/' config/config.json
 #set private key in config.json
 sed -i 's/"privateKey":.*/"privateKey": "'${PRIVATE}'",/' config/config.json
 
+#create lockfile
 touch $LOCKFILE
+
+#run proxy
+/opt/xray/xray run -config /opt/xray/config/config.json
+
 fi
 

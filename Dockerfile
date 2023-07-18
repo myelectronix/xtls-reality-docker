@@ -11,12 +11,17 @@ RUN set -e &&\
     unzip ./Xray-linux-64.zip -d /opt/xray  &&\
     rm -rf Xray-linux-64.zip
 
-COPY config.json /opt/xray/config/config.json
-COPY entrypoint.sh /opt/xray/entrypoint.sh
+WORKDIR /opt/xray
+
+COPY config.json config/config.json
+COPY entrypoint.sh .
+
+RUN chmod +x entrypoint.sh
 
 VOLUME [ "/opt/xray/config" ]
 EXPOSE 443
-ENTRYPOINT [ "/bin/sh" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
+CMD [ "/bin/sh" ]
 
 
 
