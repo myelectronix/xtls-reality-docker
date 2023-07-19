@@ -18,7 +18,6 @@ COPY entrypoint.sh .
 
 RUN chmod +x entrypoint.sh
 
-VOLUME [ "/opt/xray/config" ]
 EXPOSE 443
 ENTRYPOINT [ "./entrypoint.sh" ]
 CMD [ "/bin/sh" ]

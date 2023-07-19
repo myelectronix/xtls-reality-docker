@@ -29,9 +29,11 @@ sed -i 's/"privateKey":.*/"privateKey": "'${PRIVATE}'",/' config/config.json
 
 #create lockfile
 touch $LOCKFILE
+fi
 
 #run proxy
+echo "XTLS reality starting..."
 /opt/xray/xray run -config /opt/xray/config/config.json
 
-fi
+
 
