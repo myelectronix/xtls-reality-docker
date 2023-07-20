@@ -1,10 +1,10 @@
 version: '3.8'
 services:
   xtls-reality:
-    image: xtls-reality:1.8.3
-    container_name: xtls-reality-proxy
+    image: myelectronix/xtls-reality:1.8.3
+    container_name: xtls-reality
     build: .
-#    restart: always
+    restart: always
     ports:
       - "443:443"
     volumes:
