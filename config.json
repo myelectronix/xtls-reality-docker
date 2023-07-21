@@ -1,0 +1,61 @@
+{
+  "log": {
+    "loglevel": "error"
+  },
+  "routing": {
+    "rules": [],
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "tag": "vless_tls",
+      "settings": {
+        "clients": [
+          {
+            "id": "",
+            "flow": "xtls-rprx-vision"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+		"realitySettings": {
+			"show": false,
+			"dest": "",
+			"xver": 0,
+			"serverNames": [
+				"www.samsung.com"
+			],
+			"privateKey": "",
+			"minClientVer": "",
+			"maxClientVer": "",
+			"maxTimeDiff": 0,
+			"shortIds": [
+				""
+			]
+		}
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ]
+}
