@@ -2,6 +2,9 @@ version: '3.8'
 services:
   xtls-reality:
     image: myelectronix/xtls-reality:1.8.3
+    environment:
+      - SNI=www.samsung.com
+      - SHORT_ID=aabbccdd
     container_name: xtls-reality
     build: .
     restart: always

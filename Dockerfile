@@ -2,6 +2,8 @@ FROM alpine:latest
 LABEL mantainer="myelectronix"
 
 ARG XRAY_CORE_VERSION=v1.8.3
+ENV SNI=www.samsung.com
+ENV SHORT_ID=aabbccdd
 
 RUN set -e &&\
     apk add bash &&\
