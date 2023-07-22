@@ -7,16 +7,16 @@ then
 
 #generate uuid
 echo "Generate UUID..."
-/opt/xray/xray uuid >> config/uuid
+/opt/xray/xray uuid > config/uuid
 
 
 #generate Public & Private keys
 echo "Generate public & private keys..."
-/opt/xray/xray x25519 >> config/keys
+/opt/xray/xray x25519 > config/keys
 
 #Create files with Public & Private keys
-awk '/Public/{print $3}' config/keys >> config/public
-awk '/Private/{print $3}' config/keys >> config/private
+awk '/Public/{print $3}' config/keys > config/public
+awk '/Private/{print $3}' config/keys > config/private
 
 UUID=$(cat config/uuid)
 PRIVATE=$(cat config/private)
@@ -37,5 +37,5 @@ sed -i '/shortIds/{n;s/.*/\t\t\t\t"'${SHORT_ID}'"/}' config/config.json
 
 #run proxy
 echo "XTLS reality starting..."
-/opt/xray/xray run -config /opt/xray/config/config.json
+/opt/xray/xray run -config /opt/xray/config/config.json 
 
