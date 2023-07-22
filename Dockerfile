@@ -6,7 +6,7 @@ ENV SNI=www.samsung.com
 ENV SHORT_ID=aabbccdd
 
 RUN set -e &&\
-    apk add --no-cache bash libqrencode &&\
+    apk add --no-cache bash libqrencode curl &&\
     wget https://github.com/XTLS/Xray-core/releases/download/${XRAY_CORE_VERSION}/Xray-linux-64.zip &&\
     mkdir /opt/xray &&\
     mkdir /opt/xray/config &&\
@@ -16,6 +16,7 @@ RUN set -e &&\
 WORKDIR /opt/xray
 
 COPY config.json config/config.json
+COPY get-client-qr.sh .
 COPY entrypoint.sh .
 
 EXPOSE 443
