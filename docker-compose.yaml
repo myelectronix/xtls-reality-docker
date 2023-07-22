@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   xtls-reality:
-    image: myelectronix/xtls-reality:1.8.3
+    image:  myelectronix/xtls-reality:latest
     environment:
       - SNI=www.samsung.com
       - SHORT_ID=aabbccdd
