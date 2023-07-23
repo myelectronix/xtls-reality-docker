@@ -6,7 +6,6 @@ services:
       - SNI=www.samsung.com
       - SHORT_ID=aabbccdd
     container_name: xtls-reality
-    build: .
     restart: always
     ports:
       - "443:443"

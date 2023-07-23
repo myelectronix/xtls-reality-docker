@@ -22,4 +22,4 @@ build-and-run-local:
 		docker rm --force xtls-reality ;\
 	fi
 	docker build -t "${DOCKER_REPO}:local" . --no-cache
-	docker run -d --name xtls-reality -p 443:443 -v xtls-reality-volume:/opt/xray/config ${DOCKER_REPO}:local
+	docker run -d --rm --name xtls-reality -p 443:443 -v xtls-reality-volume:/opt/xray/config ${DOCKER_REPO}:local
