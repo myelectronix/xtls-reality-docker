@@ -104,7 +104,7 @@ git clone https://github.com/myelectronix/xtls-reality-docker
 Change your work directory and run docker compose
 ```bash
 cd xtls-reality-docker
-sudo docker compose up -d
+docker compose up -d
 ```
 
 **⚠️ Note:** You can specify the desired values ***SNI*** and  ***SHORT_ID*** in `docker-compose.yaml` file before launch docker compose or leave a default values.
