@@ -170,7 +170,7 @@ As a result you should have a new connection in the list.
 Activate it and use your XTLS-reality proxy.
 
 
-## 4. Stop and remove
+## Stop and remove
 To stop and remove your XTLS-reality-docker container execute the following command
 ```bash
 sudo docker rm --force xtls-reality 
