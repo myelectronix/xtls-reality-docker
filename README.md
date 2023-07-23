@@ -177,6 +177,6 @@ sudo docker rm --force xtls-reality
  ```
 Your settings (UUID, Private and Public keys) storaged in special docker volume. So they won't change when you delete a container and start a new one. If you desire remove all your settings execute the following command after stop and remove docker container.
 ```bash
-sudo docker volume rm xtls-reality 
+sudo docker volume rm xtls-reality-volume 
  ```
 
