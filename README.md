@@ -5,7 +5,7 @@
 This is a simple docker image which starts up in just a few seconds and launch a proxy-server ready to accept client connections. This proxy-server does not encrypt your data, but it can masquerade your traffic as a regular TLS-connection. To unauthorized users your proxy-server will look like a harmless site.
 
 
-To get it running, just copy & paste the snippet below and follow instructions in your terminal:
+To get it running, just copy & paste the snippet below in your terminal:
 
 ```bash
 sudo docker run -d --rm -p 443:443 -v xtls-reality-volume:/opt/xray/config --name xtls-reality myelectronix/xtls-reality
@@ -68,7 +68,7 @@ Pull the latest version of XTLS-reality-docker image:
 sudo docker pull myelectronix/xtls-reality:latest
 ```
 
-Copy & paste the following command to run XTLS-realit-docker:<br>
+Copy & paste the following command to run XTLS-reality-docker:<br>
 
 ```bash
 sudo docker run -d --rm  \
