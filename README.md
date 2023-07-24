@@ -22,7 +22,7 @@ To get more detailed information, go to [Quick Start](#-quick-start).
 | Name | URL 
 | :--: | :-----: |
 | GitHub | <https://github.com/myelectronix/xtls-reality-docker> |
-| Docker Hub | <https://hub.docker.com/repository/docker/myelectronix/xtls-reality/general> |
+| Docker Hub | <https://hub.docker.com/r/myelectronix/xtls-reality> |
 | XTLS GitHub  | <https://github.com/XTLS> |
 | Habr  | <https://habr.com/ru/articles/731608/> |
 
