@@ -1,4 +1,4 @@
-export XTLS_VERSION=1.8.3
+export XTLS_VERSION=1.8.4
 export DOCKER_REPO="myelectronix/xtls-reality"
 
 
